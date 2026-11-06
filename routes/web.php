@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 // Welcoe Route
@@ -23,6 +24,8 @@ Route::get('/about-view',function(){
 
 // Auth Route
 // Route::view('/signup/{Role}','auth.signup');
-Route::get('/signup/{Role}',function($Role){
-    return view('auth.signup',compact('Role'));
-});
+// Route::get('/signup/{Role}',function($Role){
+//     return view('auth.signup',compact('Role'));
+// });
+
+Route::get('/signup/{Role}',[AuthController::class,'signup']);
